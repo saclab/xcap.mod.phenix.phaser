@@ -1,0 +1,244 @@
+<pre>
+<B><FONT COLOR="#FF0000">
+<html><!-- PHENIX HTML LOGFILE -->
+
+##########################################################################################
+##########################################################################################
+##########################################################################################
+### PHENIX: Phaser                                                               2.8.3 ###
+##########################################################################################
+User:         sidx
+Run time:     Mon Mar 16 13:58:26 2020
+Version:      2.8.3
+Release Date: Thu Jun 27 23:10:05 2019 (svn 8442) (git 7464, 94b2146... )
+
+If you use this software please cite:
+"Phaser Crystallographic Software"
+A.J. McCoy, R.W. Grosse-Kunstleve, P.D. Adams, M.D. Winn, L.C. Storoni & R.J. Read
+J. Appl. Cryst. (2007). 40, 658-674
+<a href="http://journals.iucr.org/j/issues/2007/04/00/he5368/he5368.pdf">PDF</a>
+
+<!--END--></FONT></B>
+
+******************************************************************************************
+*** Phaser Module: PREPROCESSOR                                                  2.8.3 ***
+******************************************************************************************
+
+CELL 106.863 106.863 258.685 90 90 90
+ELLG HIRES ON
+ENSEMBLE ense_1 PDB &
+"/Users/sidx/cloud-fs/analytics-pipeline/data/molecular-replacement-data/3tzx_modified_modified.pdb" ID 0.95 
+HKLOUT ON
+INFORMATION OFF
+KEYWORDS OFF
+LABIN I = I SIGI = SIGI
+PEAKS ROT SELECT PERCENT CUTOFF 75
+PEAKS TRA SELECT PERCENT CUTOFF 75
+PURGE ROT PERCENT 75
+PURGE TRA PERCENT 75
+PURGE RNP PERCENT 75
+RESHARPEN PERCENTAGE 100
+ROOT "mac-123_phaser"
+SEARCH ENSEMBLE ense_1 
+SGALT BASE  P 4abw 2nw
+SPACEGROUP P 41 21 2
+TNCS RLIST ADD ON
+XYZOUT ON
+
+CPU Time: 0 days 0 hrs 0 mins 0.04 secs (      0.04 secs)
+Finished: Mon Mar 16 13:58:26 2020
+
+******************************************************************************************
+*** Phaser Module: AUTOMATED MOLECULAR REPLACEMENT                               2.8.3 ***
+******************************************************************************************
+
+** Steps:
+**    Cell Content Analysis
+**    Anisotropy correction
+**    Translational NCS correction
+**    Rotation Function
+**    Translation Function
+**    Packing
+**    Refinement
+**    Final Refinement (if data higher resolution than search resolution)
+** Number of search ensembles = 1
+** Search Method: FAST
+** Input Search Order:
+**    #1   ense_1  
+** Automatic (best predicted) search order WILL be used
+
+CPU Time: 0 days 0 hrs 0 mins 0.05 secs (      0.05 secs)
+Finished: Mon Mar 16 13:58:26 2020
+
+******************************************************************************************
+*** Phaser Module: CELL CONTENT ANALYSIS                                         2.8.3 ***
+******************************************************************************************
+
+   Space-Group Name (Hall Symbol): P 41 21 2 ( P 4abw 2nw)
+   Space-Group Number: 92
+   Unit Cell:  106.86  106.86  258.69   90.00   90.00   90.00
+
+--------------------
+SPACE GROUP ANALYSIS
+--------------------
+
+   Input Space Group: P 41 21 2
+
+   (a) Space groups derived by translation (screw) symmetry
+   --------------------------------------------------------
+   Z   Space Group    Hall Symbol
+   ----
+   8   P 41 21 2      P 4abw 2nw
+       P 4 2 2        P 4 2
+       P 4 21 2       P 4ab 2ab
+       P 41 2 2       P 4w 2c
+       P 42 2 2       P 4c 2
+       P 42 21 2      P 4n 2n
+       P 43 2 2       P 4cw 2c
+       P 43 21 2      P 4nw 2abw
+   ----
+
+   (b) Subgroups of space group for perfect twinning expansions
+   ------------------------------------------------------------
+   R: Reindexing operation required (*)
+   Only subgroups related by rotational symmetry are reported
+   Z   Space Group   R Hall Symbol
+   ----
+   1   P 1             P 1
+   ---
+   2   P 1 1 2       * P 2y (z,x,y)
+       P 1 1 21      * P 2yb (z,x,y)
+       C 1 2 1       * C 2y (x+y,-x+y,z)
+   ---
+   4   C 2 2 21      * C 2c 2 (x-y,x+y,z)
+       C 2 2 2       * C 2 2 (x-y,x+y,z)
+   ---
+   8   P 4 2 2         P 4 2
+       P 4 21 2        P 4ab 2ab
+       P 41 21 2       P 4abw 2nw
+       P 42 2 2        P 4c 2
+       P 42 21 2       P 4n 2n
+       P 43 2 2        P 4cw 2c
+       P 43 21 2       P 4nw 2abw
+       P 41 2 2        P 4w 2c
+   ----
+
+   Composition is of type: PROTEIN
+   MW to which Matthews applies: 163654
+   Resolution for Matthews calculation:  2.30
+
+   Z       MW         VM    % solvent  rel. freq.
+   1       163654     2.26  45.49      1.000       <== most probable
+
+   Z is the number of multiples of the total composition
+   In most cases the most probable Z value should be 1
+   If it is not 1, you may need to consider other compositions
+
+   Histogram of relative frequencies of VM values
+   ----------------------------------------------
+   Frequency of most common VM value normalized to 1
+   VM values plotted in increments of 1/VM (0.02)
+
+        <--- relative frequency --->
+        0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  
+        |    |    |    |    |    |    |    |    |    |    |    
+   10.00 -
+    8.33 -
+    7.14 -
+    6.25 -
+    5.56 -
+    5.00 -
+    4.55 -
+    4.17 -
+    3.85 --
+    3.57 ----
+    3.33 -------
+    3.12 -----------
+    2.94 ----------------
+    2.78 -----------------------
+    2.63 -------------------------------
+    2.50 ---------------------------------------
+    2.38 ----------------------------------------------
+    2.27 --------------------------------------------------
+    2.17 ************************************************* (COMPOSITION*1)
+    2.08 -------------------------------------------
+    2.00 --------------------------------
+    1.92 ---------------------
+    1.85 -----------
+    1.79 -----
+    1.72 --
+    1.67 -
+    1.61 -
+    1.56 -
+    1.52 -
+    1.47 -
+    1.43 -
+    1.39 -
+    1.35 -
+    1.32 -
+    1.28 -
+    1.25 -
+
+   Most probable VM for resolution = 2.24226
+   Most probable MW of protein in asu for resolution = 164683
+
+CPU Time: 0 days 0 hrs 0 mins 0.22 secs (      0.22 secs)
+Finished: Mon Mar 16 13:58:26 2020
+
+******************************************************************************************
+*** Phaser Module: ANISOTROPY CORRECTION                                         2.8.3 ***
+******************************************************************************************
+
+------------------------------
+DATA FOR ANISOTROPY CORRECTION
+------------------------------
+
+   Resolution of All Data (Number):        2.30  49.13 (67327)
+   Resolution of Selected Data (Number):   2.30  49.13 (67315)
+
+   Outlier Rejection
+   -----------------
+   There were 12 reflections of 67327 (0.0178%) rejected as outliers
+      - outliers with a Wilson probability less than 1e-06
+      - measurements expected to contain fewer than 0.01 bits of information
+
+      H    K    L   reso        Eo^2       sigma probability  wilson low-info
+      6    2  100   2.56      14.215       0.628   8.167e-07  true   false   
+      9    0  108   2.35      31.835       1.538   2.302e-08  true   false   
+     12    1  106   2.35      21.840       0.921   5.001e-10  true   false   
+     13    5  100   2.45      19.768       0.862   3.767e-09  true   false   
+     13    9   96   2.50      14.060       0.599   9.373e-07  true   false   
+     14    9   82   2.83      18.842       0.457   7.282e-09  true   false   
+     15    6  103   2.35      18.591       1.003   1.395e-08  true   false   
+     16    9   85   2.70      15.345       0.459   2.406e-07  true   false   
+     19    7   86   2.61      16.797       0.549   5.899e-08  true   false   
+     20    1  101   2.31      14.247       0.886   9.620e-07  true   false   
+     20   11   96   2.34      15.370       0.880   3.112e-07  true   false   
+     25    4   71   2.76      14.137       0.419   7.919e-07  true   false   
+
+---------------------
+ANISOTROPY CORRECTION
+---------------------
+
+   Protocol cycle #1 of 3
+   Refinement protocol for this macrocycle:
+   BIN SCALES: REFINE
+   ANISOTROPY: REFINE
+   SOLVENT K:  FIX
+   SOLVENT B:  FIX
+
+   Protocol cycle #2 of 3
+   Refinement protocol for this macrocycle:
+   BIN SCALES: REFINE
+   ANISOTROPY: REFINE
+   SOLVENT K:  FIX
+   SOLVENT B:  FIX
+
+   Protocol cycle #3 of 3
+   Refinement protocol for this macrocycle:
+   BIN SCALES: REFINE
+   ANISOTROPY: REFINE
+   SOLVENT K:  FIX
+   SOLVENT B:  FIX
+
+
