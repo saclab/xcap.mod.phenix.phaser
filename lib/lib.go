@@ -24,23 +24,22 @@ func ReadFile(path string) string {
 func DetectSpaceGroupAndUnitCellFromSCA(scaFilePath string) (string, string) {
 	logger.InitD()
 
-	// Read the sca file
+	//1. Read the sca file
 	scaFile := ReadFile(scaFilePath)
 
-	// Split into array
+	//2. Split into array
 	scaArray := strings.Split(scaFile, "\n")
 
-	// Grab the 3rd line i.e index 2
+	//3. Grab the 3rd line i.e index 2
 	scaArray = strings.Split(scaArray[2], "\t")
 
-	// Clean the data, remove spaces and return a array
+	//4. Clean the data, remove spaces and return a array
 	space := regexp.MustCompile(`\s+`)
 	s := strings.Split(strings.TrimSpace(space.ReplaceAllString(scaArray[0], " ")), " ")
 
 	// The returned string is in the format
 	//[106.863 106.863 258.685 90.000 90.000 90.000 p41212]
-
-	// Create the space group string
+	//5. Create the space group string
 	unitCell := strings.Join(s[:6], "")
 	spaceGroup := s[6]
 

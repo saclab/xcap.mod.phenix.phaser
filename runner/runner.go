@@ -14,8 +14,10 @@ import (
 
 // GeneraeteConfig : Generate the configuration file in the output dir
 func GeneraeteConfig(reflectionFile string, modelFile string, modelIdentity int, outputDir string) {
+	// Logger deamon
 	logger.InitD()
-	// check if output dir exist if not create it
+
+	// 1. check if output dir exist if not create it
 	if _, err := os.Stat(outputDir); os.IsNotExist(err) {
 		logger.Warning.Println("Output Dir does not exist, will create -> ", outputDir)
 		err := os.MkdirAll(outputDir, os.FileMode(0750))
@@ -26,33 +28,33 @@ func GeneraeteConfig(reflectionFile string, modelFile string, modelIdentity int,
 	}
 	logger.Info.Println("Using Output Dir : ", outputDir)
 
-	// create the template blank file
+	// 2. create the template blank file
+	// We wil place the blank file in the output dir
 	outputFile, err := os.Create(outputDir + "/config.eff")
 	if err != nil {
 		logger.Error.Println("Failed to create config file : ", outputDir, err)
 		os.Exit(2)
 	}
 
-	// generate the template
+	// 3. make a key value map for the template
 	vars := make(map[string]interface{})
 	vars["reflectionFile"] = reflectionFile
 	vars["modelFile"] = modelFile
 	vars["modelIdentity"] = modelIdentity
 	vars["outputDir"] = outputDir
 
-	// detect the space group and unit cell
+	// 4. detect the space group and unit cell
 	vars["spacegroup"], vars["unitcell"] = lib.DetectSpaceGroupAndUnitCellFromSCA(reflectionFile)
 
+	// 5. Parse the template and execute
+	// The template is at templates/phenixPhaserInputConfig/phenixPhaserInputConfig.go
 	t := template.Must(template.New("letter").Parse(phenixPhaserInputConfig.Tmpl))
-
 	err = t.Execute(outputFile, vars)
 	if err != nil {
 		logger.Error.Println("Failed to create config file (Template) : ", outputDir, err)
 		os.Exit(2)
 	}
-
 	logger.Info.Println("Template created: ", outputDir+"/config.eff")
-
 }
 
 // RunBin : Run the binary function
