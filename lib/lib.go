@@ -40,7 +40,7 @@ func DetectSpaceGroupAndUnitCellFromSCA(scaFilePath string) (string, string) {
 	// The returned string is in the format
 	//[106.863 106.863 258.685 90.000 90.000 90.000 p41212]
 	//5. Create the space group string
-	unitCell := strings.Join(s[:6], "")
+	unitCell := strings.Join(s[:6], " ")
 	spaceGroup := s[6]
 
 	spacegroupFormatted := spacegroup.Get(strings.ToUpper(spaceGroup))

@@ -50,6 +50,5 @@ func main() {
 	runner.GeneraeteConfig(*reflectionFile, *modelFile, *modelIdentity, *outputDir)
 
 	//2. Run the binary
-	//TODO
-
+	runner.RunBin(*outputDir+"/config.eff", *outputDir)
 }

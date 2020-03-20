@@ -1,7 +1,6 @@
 package runner
 
 import (
-	"fmt"
 	"os"
 	"text/template"
 
@@ -58,11 +57,16 @@ func GeneraeteConfig(reflectionFile string, modelFile string, modelIdentity int,
 }
 
 // RunBin : Run the binary function
-func RunBin() {
+func RunBin(configFilePath string, runInsideDir string) {
 
+	// Read module json file
 	config := lib.ReadFile("module.json")
 	binaryPath := gjson.Get(config, "binary.location").String()
-	fmt.Println(binaryPath)
-	executor.Shellout(binaryPath, "dev/example.eff")
+
+	// Phenix.phaser outputDir Paramater is not working
+	// Handle it by cd ing into the output dir
+	logger.Info.Println("(Run) ", binaryPath, configFilePath)
+	// S T A R T
+	executor.Shellout(binaryPath, configFilePath, map[string]string{"dir": runInsideDir})
 
 }

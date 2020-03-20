@@ -103,10 +103,10 @@ phaser {
     copies = 1
   }
   solution = None
-  output_dir = "{{.outputDir}}"
+  output_dir = {{.outputDir}}
   keywords {
     general {
-      root = "PHASER"
+      root = "XCAP-MOD-PHENIX-PHASER"
       title = None
       mute = None
       xyzout = True
