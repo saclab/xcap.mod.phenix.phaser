@@ -5,7 +5,7 @@ import (
 	"os"
 	"text/template"
 
-	"github.com/saclab/xcap.libs/execuator"
+	"github.com/saclab/xcap.libs/executor"
 	"github.com/saclab/xcap.libs/logger"
 	"github.com/saclab/xcap.mod.phenix.phaser/lib"
 	"github.com/saclab/xcap.mod.phenix.phaser/templates/phenixPhaserInputConfig"
@@ -63,6 +63,6 @@ func RunBin() {
 	config := lib.ReadFile("module.json")
 	binaryPath := gjson.Get(config, "binary.location").String()
 	fmt.Println(binaryPath)
-	execuator.Shellout(binaryPath, "dev/example.eff")
+	executor.Shellout(binaryPath, "dev/example.eff")
 
 }
